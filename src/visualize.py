@@ -1,0 +1,76 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+exoplanetDF = pd.read_csv("data/processed_data.csv")
+
+plt.hist(exoplanetDF['pl_orbsmax'], bins=np.linspace(0, 1.5, 31), color='blue', edgecolor='black')
+plt.xlabel('Orbital Distance [AU]')
+plt.ylabel('Number of Planets')
+plt.title('Orbital Distance Distribution')
+plt.savefig('results/pl_orbsmax_hist.png')
+plt.close()
+
+plt.hist(exoplanetDF['pl_rade'], bins=np.linspace(0, 20, 31), color='red', edgecolor='black')
+plt.xlabel('Planet Radius [Earth Radii]')
+plt.ylabel('Number of Planets')
+plt.title('Planet Radius Distribution')
+plt.savefig('results/pl_rade_hist.png')
+plt.close()
+
+plt.hist(exoplanetDF['pl_bmasse'], bins=np.linspace(0, 1000, 31), color='green', edgecolor='black')
+plt.xlabel('Planet Mass [Earth Masses]')
+plt.ylabel('Number of Planets')
+plt.title('Planet Mass Distribution')
+plt.savefig('results/pl_masse_hist.png')
+plt.close()
+
+plt.hist(exoplanetDF['pl_dens'], bins=np.linspace(0, 30, 31), color='yellow', edgecolor='black')
+plt.xlabel('Planet Density [g/cm^3]')
+plt.ylabel('Number of Planets')
+plt.title('Planet Density Distribution')
+plt.savefig('results/pl_dens_hist.png')
+plt.close()
+
+plt.hist(exoplanetDF['pl_orbeccen'], bins=np.linspace(0, 1, 31), color='orange', edgecolor='black')
+plt.xlabel('Planet Eccentricity [Eccentricity]')
+plt.ylabel('Number of Planets')
+plt.title('Planet Eccentricity Distribution')
+plt.savefig('results/pl_orbeccen_hist.png')
+plt.show()
+plt.close()
+
+print("Planet's distance from host star in AU:")
+print("Mean: ", exoplanetDF["pl_orbsmax"].mean())
+print("Median: ", exoplanetDF["pl_orbsmax"].median())
+print("Mininmum: ", exoplanetDF["pl_orbsmax"].min())
+print("Maximum: ", exoplanetDF["pl_orbsmax"].max())
+print()
+
+print("Planet's radius in Earth radii")
+print("Mean: ", exoplanetDF["pl_rade"].mean())
+print("Median: ", exoplanetDF["pl_rade"].median())
+print("Mininmum: ", exoplanetDF["pl_rade"].min())
+print("Maximum: ", exoplanetDF["pl_rade"].max())
+print()
+
+print("Planet's mass in Earth massses")
+print("Mean: ", exoplanetDF["pl_bmasse"].mean())
+print("Median: ", exoplanetDF["pl_bmasse"].median())
+print("Mininmum: ", exoplanetDF["pl_bmasse"].min())
+print("Maximum: ", exoplanetDF["pl_bmasse"].max())
+print()
+
+print("Planet's density in g/cm^3")
+print("Mean: ", exoplanetDF["pl_dens"].mean())
+print("Median: ", exoplanetDF["pl_dens"].median())
+print("Mininmum: ", exoplanetDF["pl_dens"].min())
+print("Maximum: ", exoplanetDF["pl_dens"].max())
+print()
+
+print("Planet's orbital eccentricity")
+print("Mean: ", exoplanetDF["pl_orbeccen"].mean())
+print("Median: ", exoplanetDF["pl_orbeccen"].median())
+print("Mininmum: ", exoplanetDF["pl_orbeccen"].min())
+print("Maximum: ", exoplanetDF["pl_orbeccen"].max())
+print()

@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
-exoplanetDF = pd.read_csv("data/processed_data.csv")
+exoplanetDF = pd.read_csv("data/scored_exoplanets.csv")
 
 plt.hist(exoplanetDF['pl_orbsmax'], bins=np.linspace(0, 1.5, 31), color='blue', edgecolor='black')
 plt.xlabel('Orbital Distance [AU]')
@@ -58,7 +58,13 @@ plt.xlabel('Planet Distance from Earth [PC]')
 plt.ylabel('Number of Planets')
 plt.title('Planet Distance from Earth Distribution')
 plt.savefig('results/sy_dist_hist.png')
-plt.show()
+plt.close()
+
+plt.hist(exoplanetDF['score'], bins=np.linspace(0, 100, 31), color='white', edgecolor='black')
+plt.xlabel('Planet Habitability Score]')
+plt.ylabel('Number of Planets')
+plt.title('Planet Habitability Score Distribution')
+plt.savefig('results/score_hist.png')
 plt.close()
 
 print("Planet's distance from host star in AU:")
@@ -115,4 +121,11 @@ print("Mean: ", exoplanetDF["sy_dist"].mean())
 print("Median: ", exoplanetDF["sy_dist"].median())
 print("Mininmum: ", exoplanetDF["sy_dist"].min())
 print("Maximum: ", exoplanetDF["sy_dist"].max())
+print()
+
+print("Planet's habitabiltiy score")
+print("Mean: ", exoplanetDF["score"].mean())
+print("Median: ", exoplanetDF["score"].median())
+print("Mininmum: ", exoplanetDF["score"].min())
+print("Maximum: ", exoplanetDF["score"].max())
 print()

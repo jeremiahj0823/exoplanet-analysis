@@ -2,17 +2,17 @@
 
 This project uses **NASA Exoplanet Archive** data for determining habitability.
 
-Process:
+## Process:
 
-1. Data Cleaning
+### 1. Data Cleaning
 
     - Data was first cleaned to exclude outliers and physical anomalies.
 
-2. Visualization
+### 2. Visualization
 
     - Graphs were made using matplotlib to visualize the distribution of planet's features for further cleaning.
 
-3. Scoring
+### 3. Scoring
 
     - Exoplanets were then scored based on several factors, including:
 
@@ -26,12 +26,12 @@ Process:
 
         * *Insolation Flux (Earth Flux)*: Energy is needed for liquid water.
 
-4. Machine Learning Prediction
+### 4. Machine Learning Prediction
 
     - A Random Forest model was trained on actual scores and predicted new scores (80 train / 20 test).
 
         * An R^2 score of **0.99** was achieved.
         ![Predicted vs Actual Scores](results/predicted_vs_actual.png)
 
-5. Finalizing
+### 5. Finalizing
      - Results were all saved to exoplanet-analysis/results.

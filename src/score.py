@@ -6,11 +6,14 @@ def planet_score(planet):
     rade_score = 0
     masse_score = 0
     dens_score = 0
-    eccen_score = 0
     insol_score = 0
 
-    temp = planet["pl_eqt"]
-    if 250 <= temp <= 290:
+    # full score is achieved for being in a small safe zone
+    # linear interpolation is used to determine score slightly outside safe zone
+    # 0 points for being too far outside the safe zone
+
+    temp = planet["pl_eqt"] 
+    if 250 <= temp <= 290: # safe zone is between 250 - 290 K (-23 C to 23 C)
         temp_score = 1
     elif 200 <= temp < 250:
         temp_score = (temp - 200) / 50
@@ -20,7 +23,7 @@ def planet_score(planet):
         temp_score = 0
 
     rade = planet["pl_rade"]
-    if 0.75 <= rade <= 1.25:
+    if 0.75 <= rade <= 1.25: # safe zone is between 0.75 to 1.25 Earth radii
         rade_score = 1
     elif 0.5 <= rade < 0.75:
         rade_score = (rade - 0.5) / 0.25
@@ -30,7 +33,7 @@ def planet_score(planet):
         rade_score = 0
 
     masse = planet["pl_bmasse"]
-    if 0.75 <= masse <= 3:
+    if 0.75 <= masse <= 3: # safe zone is between 0.75 and 3 Earth masses
         masse_score = 1
     elif 0.5 <= masse < 0.75:
         masse_score = (masse - 0.5) / 0.25
@@ -40,17 +43,17 @@ def planet_score(planet):
         masse_score = 0
 
     dens = planet["pl_dens"]
-    if 3 <= dens <= 8:
+    if 3 <= dens <= 8: # safe zone is between 3 and 8 g/cm^3, likely rocky
         dens_score = 1
     elif 1 <= dens < 3:
         dens_score = (dens - 1) / 2
-    elif 8 < dens <= 10:
+    elif 8 < dens <= 10: # likely gas if greater than 10 g/cm^3
         dens_score = (10 - dens) / 2
     else:
         dens_score = 0
 
     insol = planet["pl_insol"]
-    if 0.75 <= insol <= 1.25:
+    if 0.75 <= insol <= 1.25: # safe zone is between 0.75 and 1.25 Earth flux
         insol_score = 1
     elif 0.5 <= insol < 0.75:
         insol_score = (insol - 0.5) / 0.25
@@ -65,9 +68,12 @@ def planet_score(planet):
 
 exoplanetDF = pd.read_csv("data/processed_data.csv")
 scores = []
+
+# iterate through every planet and score
 for blank, planet in exoplanetDF.iterrows():
     scores.append(planet_score(planet))
 
+# add score series to DF
 exoplanetDF["score"] = scores
 
 exoplanetDF.to_csv("data/scored_exoplanets.csv", index=False)

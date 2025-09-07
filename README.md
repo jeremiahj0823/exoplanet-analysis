@@ -52,3 +52,13 @@ git clone https://github.com/jeremiahj0823/exoplanet-analysis
 ```bash
 pip install -r requirements.txt
 ```
+
+### 3. Preprocess, score, visualize, and train/predict data
+- When tinkering with data, be sure to run all scripts in order.
+
+```bash
+python src/preprocess.py
+python src/score.py
+python stc/visualize.py
+python src/train_predict.py
+```

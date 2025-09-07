@@ -1,4 +1,4 @@
-# Predicting Exoplanet Habitability with Machine Learning
+# Predicting Exoplanet Habitability with ML
 
 This project uses **NASA Exoplanet Archive** data for determining habitability.
 
@@ -22,15 +22,16 @@ Process:
 
         * *Mass (Earth Mass)*: Planets too massive may have too high of gravity. Smaller, vice versa.
 
-        * *Density (g/cm^3)* # Less dense planets are gaseous.
+        * *Density (g/cm^3)*: Less dense planets are gaseous.
 
-        * *Insolation Flux (Earth Flux)* # Energy is needed for liquid water.
+        * *Insolation Flux (Earth Flux)*: Energy is needed for liquid water.
 
 4. Machine Learning Prediction
 
     - A Random Forest model was trained on actual scores and predicted new scores (80 train / 20 test).
 
         * An R^2 score of **0.99** was achieved.
+        ![Predicted vs Actual Scores](results/predicted_vs_actual.png)
 
 5. Finalizing
      - Results were all saved to exoplanet-analysis/results.

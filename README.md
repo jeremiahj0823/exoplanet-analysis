@@ -4,24 +4,34 @@ This project uses **NASA Exoplanet Archive** data for determining habitability.
 
 Process:
 
-Data was first cleaned to exclude outliers and physical anomalies.
+1. Data Cleaning
 
-Graphs were made using matplotlib to visualize the distribution of planet's features for further cleaning.
+- Data was first cleaned to exclude outliers and physical anomalies.
 
-Exoplanets were then scored based on several factors, including:
+2. Visualization
 
-*Equilibrium Temperature (K)*: Planets can't be too hot or too cold. Must be in habitable zone.
+- Graphs were made using matplotlib to visualize the distribution of planet's features for further cleaning.
 
-*Radius (Earth Radii)*: Small planets are likely to not hold an atmosphere. Large planets may be gaseous.
+3. Scoring
 
-*Mass (Earth Mass)*: Planets too massive may have too high of gravity. Smaller, vice versa.
+- Exoplanets were then scored based on several factors, including:
 
-*Density (g/cm^3)* # Less dense planets are gaseous.
+* *Equilibrium Temperature (K)*: Planets can't be too hot or too cold. Must be in habitable zone.
 
-*Insolation Flux (Earth Flux)* # Energy is needed for liquid water.
+* *Radius (Earth Radii)*: Small planets are likely to not hold an atmosphere. Large planets may be gaseous.
 
-A Random Forest model was trained on actual scores and predicted new scores (80 train / 20 test).
+* *Mass (Earth Mass)*: Planets too massive may have too high of gravity. Smaller, vice versa.
 
-An R^2 score of **0.99** was achieved.
+* *Density (g/cm^3)* # Less dense planets are gaseous.
 
-Results were all saved to exoplanet-analysis/results.
+* *Insolation Flux (Earth Flux)* # Energy is needed for liquid water.
+
+4. Machine Learning Prediction
+
+- A Random Forest model was trained on actual scores and predicted new scores (80 train / 20 test).
+
+* An R^2 score of **0.99** was achieved.
+
+5. Finalizing
+
+- Results were all saved to exoplanet-analysis/results.

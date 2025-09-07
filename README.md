@@ -6,7 +6,7 @@ This project uses **NASA Exoplanet Archive** data for determining habitability.
 
 ### 1. Data Cleaning
 
-    - Data was first cleaned to exclude outliers and physical anomalies.
+- Data was first cleaned to exclude outliers and physical anomalies.
 
 ### 2. Visualization
 

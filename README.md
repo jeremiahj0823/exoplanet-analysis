@@ -10,28 +10,28 @@ This project uses **NASA Exoplanet Archive** data for determining habitability.
 
 ### 2. Visualization
 
-    - Graphs were made using matplotlib to visualize the distribution of planet's features for further cleaning.
+- Graphs were made using matplotlib to visualize the distribution of planet's features for further cleaning.
 
 ### 3. Scoring
 
-    - Exoplanets were then scored based on several factors, including:
+- Exoplanets were then scored based on several factors, including:
 
-        * *Equilibrium Temperature (K)*: Planets can't be too hot or too cold. Must be in habitable zone.
+    * *Equilibrium Temperature (K)*: Planets can't be too hot or too cold. Must be in habitable zone.
 
-        * *Radius (Earth Radii)*: Small planets are likely to not hold an atmosphere. Large planets may be gaseous.
+    * *Radius (Earth Radii)*: Small planets are likely to not hold an atmosphere. Large planets may be gaseous.
 
-        * *Mass (Earth Mass)*: Planets too massive may have too high of gravity. Smaller, vice versa.
+    * *Mass (Earth Mass)*: Planets too massive may have too high of gravity. Smaller, vice versa.
 
-        * *Density (g/cm^3)*: Less dense planets are gaseous.
+    * *Density (g/cm^3)*: Less dense planets are gaseous.
 
-        * *Insolation Flux (Earth Flux)*: Energy is needed for liquid water.
+    * *Insolation Flux (Earth Flux)*: Energy is needed for liquid water.
 
 ### 4. Machine Learning Prediction
 
-    - A Random Forest model was trained on actual scores and predicted new scores (80 train / 20 test).
+- A Random Forest model was trained on actual scores and predicted new scores (80 train / 20 test).
 
-        * An R^2 score of **0.99** was achieved.
-        ![Predicted vs Actual Scores](results/predicted_vs_actual.png)
+    * An R^2 score of **0.99** was achieved.
+    ![Predicted vs Actual Scores](results/predicted_vs_actual.png)
 
 ### 5. Finalizing
-     - Results were all saved to exoplanet-analysis/results.
+- Results were all saved to exoplanet-analysis/results.

@@ -40,4 +40,15 @@ Roughly 4000 planets were used from the Planetary Systems Composite Data (~6000 
 ### 5. Finalizing
 - Results were all saved to exoplanet-analysis/results.
 
-##
+## How to Run
+
+### 1. Clone Repo
+
+```bash
+git clone https://github.com/jeremiahj0823/exoplanet-analysis
+```
+### 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```

@@ -45,9 +45,9 @@ def planet_score(planet):
     dens = planet["pl_dens"]
     if 3 <= dens <= 8: # safe zone is between 3 and 8 g/cm^3, likely rocky
         dens_score = 1
-    elif 1 <= dens < 3:
-        dens_score = (dens - 1) / 2
-    elif 8 < dens <= 10: # likely gas if greater than 10 g/cm^3
+    elif 2 <= dens < 3:
+        dens_score = (dens - 2) / 1
+    elif 8 < dens <= 10:
         dens_score = (10 - dens) / 2
     else:
         dens_score = 0
@@ -76,6 +76,7 @@ for blank, planet in exoplanetDF.iterrows():
 # add score series to DF
 exoplanetDF["score"] = scores
 
+#
 exoplanetDF.to_csv("data/scored_exoplanets.csv", index=False)
 
 planet_scores_df = exoplanetDF[["pl_name", "score"]].sort_values(by="score", ascending=False)

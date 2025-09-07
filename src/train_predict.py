@@ -13,7 +13,7 @@ y = exoplanetDF["score"]
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=67)
 
-rf = RandomForestRegressor(n_estimators=200, max_depth=8, random_state=42)
+rf = RandomForestRegressor(n_estimators=200, max_depth=8, random_state=67)
 
 rf.fit(x_train, y_train)
 
@@ -25,7 +25,6 @@ r2 = r2_score(y_test, y_pred)
 print("Mean Squared Error:", mse)
 print("R^2 Score:", r2)
 
-plt.figure(figsize=(8,6))
 plt.scatter(y_test, y_pred, color='blue', edgecolor='black', alpha=0.7)
 plt.plot([0, 100], [0, 100], color='red', linestyle='--')
 plt.xlabel('Actual Habitability Score')

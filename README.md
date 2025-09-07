@@ -46,6 +46,7 @@ Roughly 4000 planets were used from the Planetary Systems Composite Data (~6000 
 
 ```bash
 git clone https://github.com/jeremiahj0823/exoplanet-analysis
+cd exoplanet-analysis
 ```
 ### 2. Install dependencies
 
@@ -59,6 +60,6 @@ pip install -r requirements.txt
 ```bash
 python src/preprocess.py
 python src/score.py
-python stc/visualize.py
+python src/visualize.py
 python src/train_predict.py
 ```

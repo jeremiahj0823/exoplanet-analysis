@@ -11,7 +11,7 @@ features = ["pl_rade", "pl_bmasse", "pl_dens", "pl_orbeccen", "pl_insol", "pl_eq
 x = exoplanetDF[features]
 y = exoplanetDF["score"]
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=68)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=67)
 
 rf = RandomForestRegressor(n_estimators=200, max_depth=8, random_state=42)
 
@@ -27,9 +27,7 @@ print("R^2 Score:", r2)
 
 plt.figure(figsize=(8,6))
 plt.scatter(y_test, y_pred, color='blue', edgecolor='black', alpha=0.7)
-plt.plot([0, 100], [0, 100], color='red', linestyle='--')  # diagonal line y=x
-
-plt.plot()
+plt.plot([0, 100], [0, 100], color='red', linestyle='--')
 plt.xlabel('Actual Habitability Score')
 plt.ylabel('Predicted Habitability Score')
 plt.title('Predicted vs Actual Habitability Scores')

@@ -1,6 +1,10 @@
 # Predicting Exoplanet Habitability with ML
 
+Locating habitable exoplanets is key in finding extraterrestrial life.
+
 This project uses **NASA Exoplanet Archive** data for determining habitability.
+
+Roughly 4000 planets were used from the Planetary Systems Composite Data (~6000 planets).
 
 ## Process:
 
@@ -35,3 +39,5 @@ This project uses **NASA Exoplanet Archive** data for determining habitability.
 
 ### 5. Finalizing
 - Results were all saved to exoplanet-analysis/results.
+
+##

@@ -37,7 +37,7 @@ Roughly 4000 planets were used from the Planetary Systems Composite Data (~6000 
 - Random Forest and Linear Regression models were trained on actual scores and predicted new scores (80 train / 20 test).
 
     * Linear Regression achieved an R^2 of 0.50 due to non-linear data.
-    * An R^2 score of 0.99 was achieved using Random Forest. Of course, the algorithm is just valdiating the scoring function.
+    * An R^2 score of *0.99* was then achieved using a Random Forest. Of course, the algorithm is just valdiating the scoring function. See graph below.
     ![Predicted vs Actual Scores](results/predicted_vs_actual.png)
 
 ### 5. Finalizing

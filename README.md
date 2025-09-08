@@ -10,7 +10,7 @@ Roughly 4000 planets were used from the Planetary Systems Composite Data (~6000 
 
 ### 1. Data Cleaning
 
-- Data was first cleaned to exclude outliers and physical anomalies.
+- Data was first cleaned to exclude outliers and physical anomalies, such as incredibly high mass and radius.
 
 ### 2. Visualization
 

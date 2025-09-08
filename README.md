@@ -34,7 +34,7 @@ Roughly 4000 planets were used from the Planetary Systems Composite Data (~6000 
 
 - A Random Forest model was trained on actual scores and predicted new scores (80 train / 20 test).
 
-    * An R^2 score of **0.99** was achieved.
+    * An R^2 score of 0.99 was achieved. Of course, the algorithm is just valdiating the scoring function.
     ![Predicted vs Actual Scores](results/predicted_vs_actual.png)
 
 ### 5. Finalizing

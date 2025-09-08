@@ -47,3 +47,4 @@ plt.tight_layout()
 # Save.
 plt.savefig('results/predicted_vs_actual.png')
 plt.show()
+plt.close()

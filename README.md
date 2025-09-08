@@ -10,7 +10,7 @@ Roughly 4000 planets were used from the Planetary Systems Composite Data (~6000 
 
 ### 1. Data Cleaning
 
-- Data was first cleaned to exclude outliers and physical anomalies, such as incredibly high mass and radius.
+- Data was first cleaned by evaluating median, mean, min, and max to exclude outliers and physical anomalies, such as incredibly high mass and radius.
 
 ### 2. Visualization
 
@@ -30,11 +30,14 @@ Roughly 4000 planets were used from the Planetary Systems Composite Data (~6000 
 
     * *Insolation Flux (Earth Flux)*: Energy is needed for liquid water.
 
+- Not all features were used for scoring such as orbital eccentricty due to being mostly incomplete.
+
 ### 4. Machine Learning Prediction
 
-- A Random Forest model was trained on actual scores and predicted new scores (80 train / 20 test).
+- Random Forest and Linear Regression models were trained on actual scores and predicted new scores (80 train / 20 test).
 
-    * An R^2 score of 0.99 was achieved. Of course, the algorithm is just valdiating the scoring function.
+    * Linear Regression achieved an R^2 of 0.50 due to non-linear data.
+    * An R^2 score of 0.99 was achieved using Random Forest. Of course, the algorithm is just valdiating the scoring function.
     ![Predicted vs Actual Scores](results/predicted_vs_actual.png)
 
 ### 5. Finalizing
